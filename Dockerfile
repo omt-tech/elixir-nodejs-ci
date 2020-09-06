@@ -10,8 +10,6 @@ RUN apt-get update
 
 RUN apt-get install -y build-essential
 
-RUN apt-get install -y vim
-
 #Install elixir
 RUN apt install -y gnupg
 RUN apt install -y wget
