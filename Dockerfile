@@ -32,11 +32,9 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
   postgresql-client \
   jq \
   python3 \
-  inotify-tools
+  inotify-tools \
+  awscli
   
-RUN pip3 install awscli
-  
-
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt install -y nodejs
 
