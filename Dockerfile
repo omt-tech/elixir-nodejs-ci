@@ -18,6 +18,9 @@ RUN apt-get update
 RUN apt-get -y install esl-erlang
 RUN apt-get -y install elixir
 
+RUN mix local.rebar --force
+RUN mix local.hex --force
+
 #Install nodejs tooling
 # Replace shell with bash so we can source files
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
