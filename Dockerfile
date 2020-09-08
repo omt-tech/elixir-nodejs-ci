@@ -29,7 +29,9 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 # Install base dependencies
-RUN apt-get update && apt-get install -y -q --no-install-recommends \
+RUN apt-get update
+RUN apt-get remove docker docker-engine docker.io
+RUN apt-get install -y -q --no-install-recommends \
   curl \
   docker \
   postgresql-client \
@@ -39,7 +41,7 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
   awscli \
   git \
   openssh-client \
-  docker
+  docker.io
   
   
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
